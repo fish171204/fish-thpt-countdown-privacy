@@ -19,6 +19,7 @@
     }
 
     .container {
+      position: relative;
       max-width: 800px;
       background: #ffffff;
       border-radius: 24px;
@@ -28,11 +29,41 @@
       width: 100%;
     }
 
+    .lang-switch {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      display: flex;
+      background: #f0f4f1;
+      padding: 4px;
+      border-radius: 12px;
+    }
+
+    .lang-switch button {
+      border: none;
+      background: transparent;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      color: #777;
+      transition: all 0.3s ease;
+    }
+
+    .lang-switch button.active {
+      background: #4A7C59;
+      color: white;
+      box-shadow: 0 2px 8px rgba(74, 124, 89, 0.3);
+    }
+
     .header {
       text-align: center;
       margin-bottom: 40px;
       border-bottom: 1px solid #eee;
       padding-bottom: 30px;
+      margin-top: 20px;
     }
 
     .logo {
@@ -106,11 +137,23 @@
       padding-top: 20px;
     }
 
-    /* Giao diện cho màn hình nhỏ (Điện thoại) */
+    .lang-en {
+      display: none;
+    }
+
     @media (max-width: 600px) {
       .container {
         padding: 24px 20px;
         border-radius: 20px;
+      }
+
+      .lang-switch {
+        top: 16px;
+        right: 16px;
+      }
+
+      .header {
+        margin-top: 30px;
       }
 
       h1 {
@@ -122,105 +165,208 @@
 
 <body>
   <div class="container">
-    <div class="header">
-      <!-- Ảnh logo sẽ được load từ file playstore.png bạn tải lên -->
-      <img src="playstore.png" alt="Logo Đếm Ngược Thi" class="logo">
-      <h1>Đếm Ngược Thi THPTQG & ĐGNL</h1>
-      <span class="badge">Phiên bản 1.0.0</span>
+
+    <div class="lang-switch">
+      <button id="btn-vi" class="active" onclick="switchLang('vi')">🇻🇳 VI</button>
+      <button id="btn-en" onclick="switchLang('en')">🇬🇧 EN</button>
     </div>
 
-    <h2>Privacy Policy</h2>
-    <p>This privacy policy applies to the Đếm Ngược Thi - THPTQG &amp; ĐGNL app (hereby referred to as "Application")
-      for mobile devices that was created by Dang Khoa (hereby referred to as "Service Provider") as a Free service.
-      This service is intended for use "AS IS".</p>
+    <div class="header">
+      <img src="playstore.png" alt="Logo Đếm Ngược Thi" class="logo">
+      <h1>Đếm Ngược Thi THPTQG & ĐGNL</h1>
+      <span class="badge lang-vi">Phiên bản 1.0.0</span>
+      <span class="badge lang-en">Version 1.0.0</span>
+    </div>
 
-    <h2>Information Collection and Use</h2>
-    <p>The Application collects information when you download and use it. This information may include information such
-      as:</p>
-    <ul>
-      <li>Your device's Internet Protocol address (e.g. IP address)</li>
-      <li>The pages of the Application that you visit, the time and date of your visit, the time spent on those pages
-      </li>
-      <li>The time spent on the Application</li>
-      <li>The operating system you use on your mobile device</li>
-    </ul>
-    <p>The Application does not gather precise information about the location of your mobile device.</p>
-    <p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.
-    </p>
-    <p>The Service Provider may use the information you provided to contact you from time to time to provide you with
-      important information, required notices and marketing promotions.</p>
-    <p>For a better experience, while using the Application, the Service Provider may require you to provide us with
-      certain personally identifiable information, including but not limited to contact.nguyendangkhoa2004@gmail.com.
-      The information that the Service Provider request will be retained by them and used as described in this privacy
-      policy.</p>
+    <div class="lang-vi">
+      <h2>Chính sách bảo mật</h2>
+      <p>Chính sách bảo mật này áp dụng cho ứng dụng Đếm Ngược Thi - THPTQG & ĐGNL (sau đây gọi là "Ứng dụng") dành cho
+        thiết bị di động do Đăng Khoa (sau đây gọi là "Nhà cung cấp dịch vụ") tạo ra dưới dạng dịch vụ Miễn phí. Dịch vụ
+        này được cung cấp nguyên trạng ("AS IS").</p>
 
-    <h2>Third Party Access</h2>
-    <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in
-      improving the Application and their service. The Service Provider may share your information with third parties in
-      the ways that are described in this privacy statement.</p>
-    <p>Please note that the Application utilizes third-party services that have their own Privacy Policy about handling
-      data. Below are the links to the Privacy Policy of the third-party service providers used by the Application:</p>
-    <ul>
-      <li><a href="https://support.google.com/admob/answer/6128543?hl=vi" target="_blank"
-          rel="noopener noreferrer">AdMob</a></li>
-      <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google
-          Analytics for Firebase</a></li>
-      <li><a href="https://www.facebook.com/about/privacy/update/printable" target="_blank"
-          rel="noopener noreferrer">Facebook</a></li>
-    </ul>
-    <p>The Service Provider may disclose User Provided and Automatically Collected Information:</p>
-    <ul>
-      <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
-      <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or
-        the safety of others, investigate fraud, or respond to a government request;</li>
-      <li>with their trusted services providers who work on their behalf, do not have an independent use of the
-        information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.
-      </li>
-    </ul>
+      <h2>Thu thập và sử dụng thông tin</h2>
+      <p>Ứng dụng thu thập thông tin khi bạn tải xuống và sử dụng. Thông tin này có thể bao gồm:</p>
+      <ul>
+        <li>Địa chỉ Giao thức Internet (IP) của thiết bị của bạn</li>
+        <li>Thời gian bạn sử dụng Ứng dụng</li>
+        <li>Hệ điều hành bạn sử dụng trên thiết bị di động</li>
+      </ul>
+      <p>Ứng dụng không thu thập thông tin chính xác về vị trí thiết bị di động của bạn.</p>
+      <p>Ứng dụng không sử dụng công nghệ Trí tuệ nhân tạo (AI) để xử lý dữ liệu của bạn hoặc cung cấp tính năng.</p>
+      <p>Nhà cung cấp dịch vụ có thể sử dụng thông tin được thu thập để thỉnh thoảng gửi các thông báo quan trọng và cập
+        nhật về Ứng dụng.</p>
 
-    <h2>Opt-Out Rights</h2>
-    <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the standard
-      uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or
-      network.</p>
+      <h2>Quyền truy cập của bên thứ ba</h2>
+      <p>Chỉ dữ liệu tổng hợp, ẩn danh mới được định kỳ truyền đến các dịch vụ bên ngoài để giúp Nhà cung cấp dịch vụ
+        cải thiện Ứng dụng. Nhà cung cấp dịch vụ có thể chia sẻ thông tin của bạn với các bên thứ ba theo những cách
+        được mô tả trong chính sách này.</p>
+      <p>Xin lưu ý rằng Ứng dụng có sử dụng các dịch vụ của bên thứ ba. Các dịch vụ này có Chính sách bảo mật riêng về
+        việc xử lý dữ liệu. Dưới đây là liên kết đến Chính sách bảo mật của các nhà cung cấp dịch vụ bên thứ ba được Ứng
+        dụng sử dụng:</p>
+      <ul>
+        <li><a href="https://support.google.com/admob/answer/6128543?hl=vi" target="_blank"
+            rel="noopener noreferrer">Google AdMob</a></li>
+        <li><a href="https://www.facebook.com/about/privacy/update/printable" target="_blank"
+            rel="noopener noreferrer">Facebook (Meta)</a></li>
+      </ul>
+      <p>Nhà cung cấp dịch vụ có thể tiết lộ Thông tin thu thập tự động và do người dùng cung cấp:</p>
+      <ul>
+        <li>Theo yêu cầu của pháp luật, chẳng hạn như để tuân thủ trát hầu tòa hoặc quy trình pháp lý tương tự;</li>
+        <li>Khi họ tin tưởng thiện ý rằng việc tiết lộ là cần thiết để bảo vệ quyền lợi của họ, bảo vệ sự an toàn của
+          bạn hoặc của người khác, điều tra gian lận hoặc phản hồi yêu cầu của chính phủ;</li>
+        <li>Với các nhà cung cấp dịch vụ đáng tin cậy làm việc thay mặt họ, không có quyền sử dụng độc lập thông tin
+          được tiết lộ và đã đồng ý tuân thủ các quy tắc trong chính sách bảo mật này.</li>
+      </ul>
 
-    <h2>Data Retention Policy</h2>
-    <p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable
-      time thereafter. If you'd like them to delete User Provided Data that you have provided via the Application,
-      please contact them at contact.nguyendangkhoa2004@gmail.com and they will respond in a reasonable time.</p>
+      <h2>Quyền từ chối (Opt-Out)</h2>
+      <p>Bạn có thể dễ dàng dừng toàn bộ việc thu thập thông tin của Ứng dụng bằng cách gỡ cài đặt ứng dụng khỏi thiết
+        bị di động của bạn.</p>
 
-    <h2>Children</h2>
-    <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the
-      age of 13.</p>
-    <p>The Application does not address anyone under the age of 13. The Service Provider does not knowingly collect
-      personally identifiable information from children under 13 years of age. In the case the Service Provider discover
-      that a child under 13 has provided personal information, the Service Provider will immediately delete this from
-      their servers. If you are a parent or guardian and you are aware that your child has provided us with personal
-      information, please contact the Service Provider (contact.nguyendangkhoa2004@gmail.com) so that they will be able
-      to take the necessary actions.</p>
+      <h2>Chính sách lưu giữ dữ liệu</h2>
+      <p>Nhà cung cấp dịch vụ sẽ lưu giữ dữ liệu do Người dùng cung cấp miễn là bạn sử dụng Ứng dụng và trong một khoảng
+        thời gian hợp lý sau đó. Nếu bạn muốn xóa Dữ liệu đã cung cấp, vui lòng liên hệ tại
+        contact.nguyendangkhoa2004@gmail.com và họ sẽ phản hồi trong thời gian hợp lý.</p>
 
-    <h2>Security</h2>
-    <p>The Service Provider is concerned about safeguarding the confidentiality of your information. The Service
-      Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider
-      processes and maintains.</p>
+      <h2>Trẻ em</h2>
+      <p>Nhà cung cấp dịch vụ không sử dụng Ứng dụng để cố ý thu thập dữ liệu từ hoặc tiếp thị cho trẻ em dưới 13 tuổi.
+      </p>
+      <p>Trong trường hợp phát hiện một trẻ em dưới 13 tuổi đã cung cấp thông tin cá nhân, Nhà cung cấp dịch vụ sẽ xóa
+        ngay lập tức thông tin này khỏi máy chủ. Nếu bạn là cha mẹ hoặc người giám hộ và nhận thấy con mình đã cung cấp
+        thông tin cá nhân, vui lòng liên hệ (contact.nguyendangkhoa2004@gmail.com) để có biện pháp xử lý kịp thời.</p>
 
-    <h2>Changes</h2>
-    <p>This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any
-      changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this
-      Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.</p>
-    <p>This privacy policy is effective as of 2026-05-09</p>
+      <h2>Bảo mật</h2>
+      <p>Nhà cung cấp dịch vụ quan tâm đến việc bảo vệ tính bảo mật thông tin của bạn. Chúng tôi cung cấp các biện pháp
+        bảo vệ vật lý, điện tử và quy trình để bảo vệ thông tin được xử lý và duy trì.</p>
 
-    <h2>Your Consent</h2>
-    <p>By using the Application, you are consenting to the processing of your information as set forth in this Privacy
-      Policy now and as amended by us.</p>
+      <h2>Thay đổi</h2>
+      <p>Chính sách bảo mật này có thể được cập nhật theo thời gian. Nhà cung cấp dịch vụ sẽ thông báo cho bạn về bất kỳ
+        thay đổi nào bằng cách cập nhật trang này. Bạn nên tham khảo Chính sách bảo mật này thường xuyên, vì việc tiếp
+        tục sử dụng Ứng dụng được coi là chấp thuận mọi thay đổi.</p>
+      <p>Chính sách bảo mật này có hiệu lực kể từ ngày 09/05/2026.</p>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions regarding privacy while using the Application, or have questions about the practices,
-      please contact the Service Provider via email at contact.nguyendangkhoa2004@gmail.com.</p>
+      <h2>Sự đồng ý của bạn</h2>
+      <p>Bằng cách sử dụng Ứng dụng, bạn đồng ý cho phép xử lý thông tin của bạn như được quy định trong Chính sách bảo
+        mật này.</p>
+
+      <h2>Liên hệ</h2>
+      <p>Nếu bạn có bất kỳ câu hỏi nào liên quan đến quyền riêng tư khi sử dụng Ứng dụng, vui lòng liên hệ với Nhà cung
+        cấp dịch vụ qua email: contact.nguyendangkhoa2004@gmail.com.</p>
+    </div>
+
+    <!-- ==================== EN ==================== -->
+    <div class="lang-en">
+      <h2>Privacy Policy</h2>
+      <p>This privacy policy applies to the Đếm Ngược Thi - THPTQG &amp; ĐGNL app (hereby referred to as "Application")
+        for mobile devices that was created by Dang Khoa (hereby referred to as "Service Provider") as a Free service.
+        This service is intended for use "AS IS".</p>
+
+      <h2>Information Collection and Use</h2>
+      <p>The Application collects information when you download and use it. This information may include information
+        such as:</p>
+      <ul>
+        <li>Your device's Internet Protocol address (e.g. IP address)</li>
+        <li>The time spent on the Application</li>
+        <li>The operating system you use on your mobile device</li>
+      </ul>
+      <p>The Application does not gather precise information about the location of your mobile device.</p>
+      <p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide
+        features.</p>
+      <p>The Service Provider may use collected information from time to time to send important notices and updates
+        about the Application.</p>
+
+      <h2>Third Party Access</h2>
+      <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider
+        in improving the Application and their service. The Service Provider may share your information with third
+        parties in the ways that are described in this privacy statement.</p>
+      <p>Please note that the Application utilizes third-party services that have their own Privacy Policy about
+        handling data. Below are the links to the Privacy Policy of the third-party service providers used by the
+        Application:</p>
+      <ul>
+        <li><a href="https://support.google.com/admob/answer/6128543?hl=vi" target="_blank"
+            rel="noopener noreferrer">Google AdMob</a></li>
+        <li><a href="https://www.facebook.com/about/privacy/update/printable" target="_blank"
+            rel="noopener noreferrer">Facebook (Meta)</a></li>
+      </ul>
+      <p>The Service Provider may disclose User Provided and Automatically Collected Information:</p>
+      <ul>
+        <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
+        <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or
+          the safety of others, investigate fraud, or respond to a government request;</li>
+        <li>with their trusted services providers who work on their behalf, do not have an independent use of the
+          information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.
+        </li>
+      </ul>
+
+      <h2>Opt-Out Rights</h2>
+      <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the
+        standard uninstall processes as may be available as part of your mobile device or via the mobile application
+        marketplace or network.</p>
+
+      <h2>Data Retention Policy</h2>
+      <p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable
+        time thereafter. If you'd like them to delete User Provided Data that you have provided via the Application,
+        please contact them at contact.nguyendangkhoa2004@gmail.com and they will respond in a reasonable time.</p>
+
+      <h2>Children</h2>
+      <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under
+        the age of 13.</p>
+      <p>The Application does not address anyone under the age of 13. The Service Provider does not knowingly collect
+        personally identifiable information from children under 13 years of age. In the case the Service Provider
+        discover that a child under 13 has provided personal information, the Service Provider will immediately delete
+        this from their servers. If you are a parent or guardian and you are aware that your child has provided us with
+        personal information, please contact the Service Provider (contact.nguyendangkhoa2004@gmail.com) so that they
+        will be able to take the necessary actions.</p>
+
+      <h2>Security</h2>
+      <p>The Service Provider is concerned about safeguarding the confidentiality of your information. The Service
+        Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider
+        processes and maintains.</p>
+
+      <h2>Changes</h2>
+      <p>This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of
+        any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult
+        this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.</p>
+      <p>This privacy policy is effective as of 2026-05-09</p>
+
+      <h2>Your Consent</h2>
+      <p>By using the Application, you are consenting to the processing of your information as set forth in this Privacy
+        Policy now and as amended by us.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions regarding privacy while using the Application, or have questions about the practices,
+        please contact the Service Provider via email at contact.nguyendangkhoa2004@gmail.com.</p>
+    </div>
 
     <div class="footer">
       Made with ❤️ for Students
     </div>
   </div>
+
+  <!-- Script xử lý nút chuyển đổi ngôn ngữ -->
+  <script>
+    function switchLang(lang) {
+      const viElements = document.querySelectorAll('.lang-vi');
+      const enElements = document.querySelectorAll('.lang-en');
+      const btnVi = document.getElementById('btn-vi');
+      const btnEn = document.getElementById('btn-en');
+
+      if (lang === 'vi') {
+        viElements.forEach(el => el.style.display = 'inline-block'); // Cho span badge
+        document.querySelector('div.lang-vi').style.display = 'block'; // Cho body text
+        enElements.forEach(el => el.style.display = 'none');
+        btnVi.classList.add('active');
+        btnEn.classList.remove('active');
+        document.title = "Chính sách bảo mật - Đếm Ngược Thi";
+      } else {
+        enElements.forEach(el => el.style.display = 'inline-block'); // Cho span badge
+        document.querySelector('div.lang-en').style.display = 'block'; // Cho body text
+        viElements.forEach(el => el.style.display = 'none');
+        btnEn.classList.add('active');
+        btnVi.classList.remove('active');
+        document.title = "Privacy Policy - Đếm Ngược Thi";
+      }
+    }
+  </script>
 </body>
 
 </html>
