@@ -196,6 +196,16 @@
       <p>Nhà cung cấp dịch vụ có thể sử dụng thông tin được thu thập để thỉnh thoảng gửi các thông báo quan trọng và cập
         nhật về Ứng dụng.</p>
 
+      <h2>Quyền và tính năng yêu cầu</h2>
+      <p>Ứng dụng sử dụng một số quyền truy cập thiết bị cho các tính năng cụ thể:</p>
+      <ul>
+        <li><strong>Phát hiện ảnh chụp màn hình (Android):</strong> Ứng dụng sử dụng quyền <code>READ_MEDIA_IMAGES</code> (Android 13+) hoặc <code>READ_EXTERNAL_STORAGE</code> (Android &lt; 13) chỉ để phát hiện khi bạn chụp ảnh màn hình, nhằm tự động hiện giao diện chia sẻ kết quả đếm ngược. Ứng dụng <strong>không</strong> đọc, thu thập hay lưu trữ bất kỳ ảnh nào từ thư viện của bạn.</li>
+        <li><strong>Lưu ảnh vào thư viện (Android):</strong> Khi bạn nhấn "Lưu về máy" trong giao diện chia sẻ, ứng dụng sử dụng quyền <code>WRITE_EXTERNAL_STORAGE</code> (Android &lt;= 9) để lưu ảnh được tạo ra vào thư viện ảnh của bạn. Ảnh này chỉ chứa nội dung đếm ngược do bạn chọn chia sẻ.</li>
+        <li><strong>Phát nhạc nền (cần kết nối internet):</strong> Nhạc nền Lofi được phát trực tuyến từ máy chủ. Tính năng này yêu cầu kết nối internet và sẽ không hoạt động khi thiết bị không có mạng. Ứng dụng không ghi âm hay thu thập âm thanh từ thiết bị của bạn.</li>
+        <li><strong>Thông báo:</strong> Ứng dụng có thể gửi thông báo nhắc nhở học tập hằng ngày nếu bạn cấp quyền. Bạn có thể tắt thông báo bất kỳ lúc nào trong cài đặt thiết bị.</li>
+        <li><strong>Kết nối internet:</strong> Dùng để phát nhạc nền, tải dữ liệu kỳ thi, hiển thị quảng cáo và gửi báo cáo lỗi ẩn danh.</li>
+      </ul>
+
       <h2>Quyền truy cập của bên thứ ba</h2>
       <p>Chỉ dữ liệu tổng hợp, ẩn danh mới được định kỳ truyền đến các dịch vụ bên ngoài để giúp Nhà cung cấp dịch vụ
         cải thiện Ứng dụng. Nhà cung cấp dịch vụ có thể chia sẻ thông tin của bạn với các bên thứ ba theo những cách
@@ -205,9 +215,13 @@
         dụng sử dụng:</p>
       <ul>
         <li><a href="https://support.google.com/admob/answer/6128543?hl=vi" target="_blank"
-            rel="noopener noreferrer">Google AdMob</a></li>
+            rel="noopener noreferrer">Google AdMob</a> — Hiển thị quảng cáo</li>
+        <li><a href="https://firebase.google.com/support/privacy" target="_blank"
+            rel="noopener noreferrer">Firebase Analytics</a> — Phân tích hành vi sử dụng ẩn danh</li>
+        <li><a href="https://firebase.google.com/support/privacy" target="_blank"
+            rel="noopener noreferrer">Firebase Crashlytics</a> — Báo cáo lỗi ứng dụng ẩn danh</li>
         <li><a href="https://www.facebook.com/about/privacy/update/printable" target="_blank"
-            rel="noopener noreferrer">Facebook (Meta)</a></li>
+            rel="noopener noreferrer">Facebook (Meta)</a> — Chia sẻ nội dung lên mạng xã hội</li>
       </ul>
       <p>Nhà cung cấp dịch vụ có thể tiết lộ Thông tin thu thập tự động và do người dùng cung cấp:</p>
       <ul>
@@ -278,6 +292,16 @@
       <p>The Service Provider may use collected information from time to time to send important notices and updates
         about the Application.</p>
 
+      <h2>Permissions and Features</h2>
+      <p>The Application uses certain device permissions for specific features:</p>
+      <ul>
+        <li><strong>Screenshot Detection (Android):</strong> The Application uses <code>READ_MEDIA_IMAGES</code> (Android 13+) or <code>READ_EXTERNAL_STORAGE</code> (Android &lt; 13) solely to detect when you take a screenshot, in order to automatically show a sharing interface for your countdown result. The Application does <strong>not</strong> read, collect, or store any photos from your gallery.</li>
+        <li><strong>Save Image to Gallery (Android):</strong> When you tap "Save to device" in the sharing interface, the Application uses <code>WRITE_EXTERNAL_STORAGE</code> (Android &lt;= 9) to save the generated image to your photo library. The image contains only the countdown content you chose to share.</li>
+        <li><strong>Background Music (requires internet):</strong> Lofi background music is streamed from our servers. This feature requires an internet connection and will not work offline. The Application does not record or collect any audio from your device.</li>
+        <li><strong>Notifications:</strong> The Application may send daily study reminder notifications if you grant permission. You can disable notifications at any time in your device settings.</li>
+        <li><strong>Internet access:</strong> Used for streaming background music, loading exam data, displaying ads, and sending anonymous crash reports.</li>
+      </ul>
+
       <h2>Third Party Access</h2>
       <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider
         in improving the Application and their service. The Service Provider may share your information with third
@@ -287,9 +311,13 @@
         Application:</p>
       <ul>
         <li><a href="https://support.google.com/admob/answer/6128543?hl=vi" target="_blank"
-            rel="noopener noreferrer">Google AdMob</a></li>
+            rel="noopener noreferrer">Google AdMob</a> — Displaying advertisements</li>
+        <li><a href="https://firebase.google.com/support/privacy" target="_blank"
+            rel="noopener noreferrer">Firebase Analytics</a> — Anonymous usage analytics</li>
+        <li><a href="https://firebase.google.com/support/privacy" target="_blank"
+            rel="noopener noreferrer">Firebase Crashlytics</a> — Anonymous crash reporting</li>
         <li><a href="https://www.facebook.com/about/privacy/update/printable" target="_blank"
-            rel="noopener noreferrer">Facebook (Meta)</a></li>
+            rel="noopener noreferrer">Facebook (Meta)</a> — Social media sharing</li>
       </ul>
       <p>The Service Provider may disclose User Provided and Automatically Collected Information:</p>
       <ul>
