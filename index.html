@@ -7,7 +7,6 @@
   <meta name="description" content="Chính sách bảo mật của ứng dụng Đếm Ngược Thi THPTQG & ĐGNL.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --night:  #0b091a;
       --glass:  rgba(15, 10, 35, 0.72);
@@ -18,9 +17,7 @@
       --white:  #ffffff;
       --border: rgba(196,176,255,0.15);
     }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--night);
@@ -29,8 +26,6 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-
-    /* Background video */
     .bg-wrap {
       position: fixed;
       inset: 0;
@@ -54,14 +49,7 @@
         rgba(11,9,26,0.97) 100%
       );
     }
-
-    .page {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-    }
-
-    /* Hero */
+    .page { position: relative; z-index: 1; min-height: 100vh; }
     .hero {
       display: flex;
       flex-direction: column;
@@ -81,124 +69,75 @@
       display: block;
     }
     .hero-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 12px;
     }
     .hero h1 {
       font-size: clamp(26px, 5vw, 42px);
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+      font-weight: 700; color: var(--white);
+      letter-spacing: -0.02em; line-height: 1.2;
       margin-bottom: 12px;
     }
-    .hero-sub {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    /* Lang switch */
+    .hero-sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
     .lang-switch {
       display: flex;
       background: rgba(255,255,255,0.07);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 3px;
-      gap: 2px;
+      border-radius: 12px; padding: 3px; gap: 2px;
       backdrop-filter: blur(12px);
     }
     .lang-switch button {
-      border: none;
-      background: transparent;
-      padding: 7px 18px;
-      border-radius: 9px;
-      font-family: inherit;
-      font-weight: 600;
-      font-size: 13px;
-      cursor: pointer;
-      color: var(--muted);
+      border: none; background: transparent;
+      padding: 7px 18px; border-radius: 9px;
+      font-family: inherit; font-weight: 600; font-size: 13px;
+      cursor: pointer; color: var(--muted);
       transition: background 0.25s, color 0.25s;
     }
     .lang-switch button.active {
-      background: var(--accent2);
-      color: #fff;
+      background: var(--accent2); color: #fff;
       box-shadow: 0 2px 12px rgba(157,127,245,0.4);
     }
-
-    /* Card layout */
-    .card {
-      max-width: 780px;
-      margin: 0 auto 80px;
-      padding: 0 20px;
-    }
-
+    .card { max-width: 780px; margin: 0 auto 80px; padding: 0 20px; }
     .section {
       background: var(--glass);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px 36px;
+      border-radius: 20px; padding: 32px 36px;
       margin-bottom: 14px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     }
     .section-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent2);
-      margin-bottom: 8px;
-      display: block;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent2); margin-bottom: 8px; display: block;
     }
     .section h2 {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
+      font-size: 17px; font-weight: 700;
+      color: var(--white); margin-bottom: 12px; letter-spacing: -0.01em;
     }
     .section p {
-      font-size: 14.5px;
-      color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.75;
+      font-size: 14.5px; color: var(--text);
+      margin-bottom: 10px; line-height: 1.75;
     }
     .section p:last-child { margin-bottom: 0; }
     .section ul {
-      padding-left: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-      margin-bottom: 10px;
+      padding-left: 0; list-style: none;
+      display: flex; flex-direction: column; gap: 9px; margin-bottom: 10px;
     }
     .section li {
-      font-size: 14.5px;
-      color: var(--text);
-      padding-left: 18px;
-      position: relative;
-      line-height: 1.7;
+      font-size: 14.5px; color: var(--text);
+      padding-left: 18px; position: relative; line-height: 1.7;
     }
     .section li::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 10px;
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--accent2);
-      opacity: 0.7;
+      content: ''; position: absolute;
+      left: 0; top: 10px; width: 5px; height: 5px;
+      border-radius: 50%; background: var(--accent2); opacity: 0.7;
     }
-    /* Links: white + underline for readability */
     .section a, .section-row a {
       color: var(--white);
       text-decoration: underline;
       text-underline-offset: 3px;
-      text-decoration-color: rgba(255,255,255,0.4);
+      text-decoration-color: rgba(255,255,255,0.45);
       font-weight: 500;
       transition: text-decoration-color 0.2s;
     }
@@ -206,88 +145,64 @@
       text-decoration-color: var(--white);
     }
     code {
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 12px;
-      background: rgba(196,176,255,0.12);
-      color: var(--accent);
-      padding: 1px 6px;
-      border-radius: 5px;
+      font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px;
+      background: rgba(196,176,255,0.12); color: var(--accent);
+      padding: 1px 6px; border-radius: 5px;
     }
     strong { color: var(--white); font-weight: 600; }
-
-    /* Grouped sections */
     .section-group {
       background: var(--glass);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
+      border-radius: 20px; overflow: hidden;
       margin-bottom: 14px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     }
-    .section-row {
-      padding: 26px 36px;
-      border-bottom: 1px solid var(--border);
-    }
+    .section-row { padding: 26px 36px; border-bottom: 1px solid var(--border); }
     .section-row:last-child { border-bottom: none; }
     .section-row .section-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent2);
-      margin-bottom: 8px;
-      display: block;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent2); margin-bottom: 8px; display: block;
     }
-    .section-row h2 {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 10px;
+    .section-row h2 { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .section-row p { font-size: 14.5px; color: var(--text); line-height: 1.75; margin-bottom: 8px; }
+    .section-row p:last-child { margin-bottom: 0; }
+    .section-row ul {
+      padding-left: 0; list-style: none;
+      display: flex; flex-direction: column; gap: 8px; margin-top: 8px;
     }
-    .section-row p {
-      font-size: 14.5px;
-      color: var(--text);
-      line-height: 1.75;
+    .section-row li {
+      font-size: 14.5px; color: var(--text);
+      padding-left: 18px; position: relative; line-height: 1.7;
     }
-
-    /* Third-party table */
+    .section-row li::before {
+      content: ''; position: absolute;
+      left: 0; top: 10px; width: 5px; height: 5px;
+      border-radius: 50%; background: var(--accent2); opacity: 0.7;
+    }
     .tp-list { margin-top: 12px; }
     .tp-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 11px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 16px;
+      padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     .tp-item:last-child { border-bottom: none; }
     .tp-name { font-weight: 600; color: var(--white); font-size: 14px; }
     .tp-role { font-size: 13px; color: var(--muted); }
-    .tp-item a {
-      text-decoration: none !important;
-    }
+    .tp-item a { text-decoration: none !important; }
     .tp-item a:hover .tp-name { color: var(--accent); }
-
     footer {
-      text-align: center;
-      padding: 28px 24px 48px;
-      font-size: 13px;
-      color: var(--muted);
+      text-align: center; padding: 28px 24px 48px;
+      font-size: 13px; color: var(--muted);
     }
     footer span { color: var(--accent2); }
-
-    /* Lang visibility — JS sets display explicitly so CSS initial state only */
     .lang-en { display: none; }
-
     @media (max-width: 600px) {
       .section, .section-row { padding: 22px 20px; }
       .hero { min-height: 44vh; padding-bottom: 40px; }
       .tp-item { flex-direction: column; align-items: flex-start; gap: 4px; }
     }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
@@ -315,42 +230,49 @@
 
   <div class="card">
 
-    <!-- VIETNAMESE -->
+    <!-- ══ TIẾNG VIỆT ══ -->
     <div class="lang-vi">
+
       <div class="section">
         <span class="section-label">Giới thiệu</span>
         <h2>Chính sách bảo mật</h2>
-        <p>Chính sách này áp dụng cho ứng dụng <strong>Đếm Ngược Thi - THPTQG &amp; ĐGNL</strong> do <strong>Đăng Khoa</strong> phát triển, được cung cấp miễn phí nguyên trạng ("AS IS").</p>
+        <p>Chính sách bảo mật này áp dụng cho ứng dụng <strong>Đếm Ngược Thi - THPTQG &amp; ĐGNL</strong> (sau đây gọi là "Ứng dụng") dành cho thiết bị di động do <strong>Đăng Khoa</strong> (sau đây gọi là "Nhà cung cấp dịch vụ") tạo ra dưới dạng dịch vụ Miễn phí. Dịch vụ này được cung cấp nguyên trạng ("AS IS").</p>
       </div>
 
       <div class="section">
         <span class="section-label">Dữ liệu thu thập</span>
         <h2>Thu thập và sử dụng thông tin</h2>
-        <p>Ứng dụng thu thập một số thông tin khi bạn cài đặt và sử dụng, bao gồm:</p>
+        <p>Ứng dụng thu thập thông tin khi bạn tải xuống và sử dụng. Thông tin này có thể bao gồm:</p>
         <ul>
-          <li>Địa chỉ IP của thiết bị</li>
-          <li>Thời gian sử dụng ứng dụng</li>
-          <li>Hệ điều hành trên thiết bị di động</li>
+          <li>Địa chỉ Giao thức Internet (IP) của thiết bị của bạn</li>
+          <li>Thời gian bạn sử dụng Ứng dụng</li>
+          <li>Hệ điều hành bạn sử dụng trên thiết bị di động</li>
         </ul>
-        <p>Ứng dụng <strong>không</strong> thu thập vị trí chính xác và <strong>không</strong> sử dụng AI để xử lý dữ liệu.</p>
+        <p>Ứng dụng <strong>không</strong> thu thập thông tin chính xác về vị trí thiết bị di động của bạn.</p>
+        <p>Ứng dụng <strong>không</strong> sử dụng công nghệ Trí tuệ nhân tạo (AI) để xử lý dữ liệu của bạn hoặc cung cấp tính năng.</p>
+        <p>Nhà cung cấp dịch vụ có thể sử dụng thông tin được thu thập để thỉnh thoảng gửi các thông báo quan trọng và cập nhật về Ứng dụng.</p>
       </div>
 
       <div class="section">
         <span class="section-label">Quyền truy cập</span>
         <h2>Quyền và tính năng yêu cầu</h2>
+        <p>Ứng dụng sử dụng một số quyền truy cập thiết bị cho các tính năng cụ thể:</p>
         <ul>
-          <li><strong>Phát hiện ảnh chụp màn hình (Android):</strong> Dùng <code>READ_MEDIA_IMAGES</code> (Android 13+) hoặc <code>READ_EXTERNAL_STORAGE</code> (Android &lt; 13) để phát hiện screenshot, tự động hiện giao diện chia sẻ. Ứng dụng không đọc hay lưu ảnh từ thư viện của bạn.</li>
-          <li><strong>Lưu ảnh vào thư viện (Android):</strong> Dùng <code>WRITE_EXTERNAL_STORAGE</code> (Android ≤ 9) khi bạn nhấn "Lưu về máy". Chỉ lưu nội dung bạn chủ động chia sẻ.</li>
-          <li><strong>Phát nhạc nền:</strong> Nhạc Lofi phát trực tuyến, cần kết nối internet. Ứng dụng không ghi âm hay thu thập âm thanh.</li>
-          <li><strong>Thông báo:</strong> Nhắc nhở học tập hằng ngày nếu bạn cấp quyền. Có thể tắt bất kỳ lúc nào trong cài đặt thiết bị.</li>
-          <li><strong>Kết nối internet:</strong> Phát nhạc, tải dữ liệu kỳ thi, hiển thị quảng cáo và gửi báo cáo lỗi ẩn danh.</li>
+          <li><strong>Thư viện ảnh (iOS):</strong> Ứng dụng yêu cầu quyền truy cập thư viện ảnh để bạn chọn ảnh từ máy làm hình nền tùy chỉnh. Ảnh được sử dụng và lưu cục bộ trên thiết bị, không được tải lên bất kỳ máy chủ nào.</li>
+          <li><strong>Phát hiện ảnh chụp màn hình (Android):</strong> Ứng dụng sử dụng quyền <code>READ_MEDIA_IMAGES</code> (Android 13+) hoặc <code>READ_EXTERNAL_STORAGE</code> (Android &lt; 13) chỉ để phát hiện khi bạn chụp ảnh màn hình, nhằm tự động hiện giao diện chia sẻ kết quả đếm ngược. Ứng dụng <strong>không</strong> đọc, thu thập hay lưu trữ bất kỳ ảnh nào từ thư viện của bạn.</li>
+          <li><strong>Lưu ảnh vào thư viện (Android):</strong> Khi bạn nhấn "Lưu về máy" trong giao diện chia sẻ, ứng dụng sử dụng quyền <code>WRITE_EXTERNAL_STORAGE</code> (Android ≤ 9) để lưu ảnh được tạo ra vào thư viện ảnh của bạn. Ảnh này chỉ chứa nội dung đếm ngược do bạn chọn chia sẻ.</li>
+          <li><strong>Thông báo và lên lịch chính xác:</strong> Ứng dụng có thể gửi thông báo nhắc nhở học tập hằng ngày nếu bạn cấp quyền (<code>POST_NOTIFICATIONS</code>). Để đảm bảo thông báo đúng giờ, ứng dụng sử dụng <code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code> trên Android. Bạn có thể tắt thông báo bất kỳ lúc nào trong cài đặt thiết bị.</li>
+          <li><strong>Phát nhạc nền (cần kết nối internet):</strong> Nhạc nền Lofi được phát trực tuyến từ máy chủ. Tính năng này yêu cầu kết nối internet và sẽ không hoạt động khi thiết bị không có mạng. Ứng dụng không ghi âm hay thu thập âm thanh từ thiết bị của bạn.</li>
+          <li><strong>Theo dõi quảng cáo (iOS — App Tracking Transparency):</strong> Ứng dụng có thể yêu cầu quyền theo dõi (<code>NSUserTrackingUsageDescription</code>) để cung cấp quảng cáo cá nhân hóa và đo lường hiệu quả qua Google AdMob. Bạn hoàn toàn có thể từ chối và vẫn sử dụng được đầy đủ tính năng của ứng dụng.</li>
+          <li><strong>Kết nối internet:</strong> Dùng để phát nhạc nền, tải dữ liệu kỳ thi, kiểm tra thời tiết tự động, hiển thị quảng cáo và gửi báo cáo lỗi ẩn danh.</li>
         </ul>
       </div>
 
       <div class="section">
         <span class="section-label">Bên thứ ba</span>
-        <h2>Dịch vụ bên thứ ba</h2>
-        <p>Chỉ dữ liệu tổng hợp, ẩn danh mới được chia sẻ với dịch vụ bên ngoài:</p>
+        <h2>Quyền truy cập của bên thứ ba</h2>
+        <p>Chỉ dữ liệu tổng hợp, ẩn danh mới được định kỳ truyền đến các dịch vụ bên ngoài để giúp Nhà cung cấp dịch vụ cải thiện Ứng dụng. Nhà cung cấp dịch vụ có thể chia sẻ thông tin của bạn với các bên thứ ba theo những cách được mô tả trong chính sách này.</p>
+        <p>Xin lưu ý rằng Ứng dụng có sử dụng các dịch vụ của bên thứ ba có Chính sách bảo mật riêng. Dưới đây là liên kết đến Chính sách bảo mật của các nhà cung cấp dịch vụ bên thứ ba được Ứng dụng sử dụng:</p>
         <div class="tp-list">
           <div class="tp-item">
             <a href="https://support.google.com/admob/answer/6128543?hl=vi" target="_blank" rel="noopener noreferrer"><span class="tp-name">Google AdMob</span></a>
@@ -358,96 +280,117 @@
           </div>
           <div class="tp-item">
             <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer"><span class="tp-name">Firebase Analytics</span></a>
-            <span class="tp-role">Phân tích hành vi ẩn danh</span>
+            <span class="tp-role">Phân tích hành vi sử dụng ẩn danh</span>
           </div>
           <div class="tp-item">
             <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer"><span class="tp-name">Firebase Crashlytics</span></a>
-            <span class="tp-role">Báo cáo lỗi ẩn danh</span>
+            <span class="tp-role">Báo cáo lỗi ứng dụng ẩn danh</span>
           </div>
           <div class="tp-item">
             <a href="https://www.facebook.com/about/privacy/update/printable" target="_blank" rel="noopener noreferrer"><span class="tp-name">Facebook (Meta)</span></a>
-            <span class="tp-role">Chia sẻ lên mạng xã hội</span>
+            <span class="tp-role">Chia sẻ nội dung lên mạng xã hội</span>
           </div>
         </div>
-        <p style="margin-top:14px">Thông tin có thể được tiết lộ theo yêu cầu pháp lý, để bảo vệ quyền lợi hợp pháp, hoặc với nhà cung cấp dịch vụ ủy thác đã ký cam kết bảo mật.</p>
+        <p style="margin-top:14px">Nhà cung cấp dịch vụ có thể tiết lộ thông tin thu thập được trong các trường hợp sau:</p>
+        <ul>
+          <li>Theo yêu cầu của pháp luật, chẳng hạn như để tuân thủ trát hầu tòa hoặc quy trình pháp lý tương tự;</li>
+          <li>Khi họ tin tưởng thiện ý rằng việc tiết lộ là cần thiết để bảo vệ quyền lợi của họ, bảo vệ sự an toàn của bạn hoặc của người khác, điều tra gian lận hoặc phản hồi yêu cầu của chính phủ;</li>
+          <li>Với các nhà cung cấp dịch vụ đáng tin cậy làm việc thay mặt họ, không có quyền sử dụng độc lập thông tin được tiết lộ và đã đồng ý tuân thủ các quy tắc trong chính sách bảo mật này.</li>
+        </ul>
       </div>
 
       <div class="section-group">
         <div class="section-row">
           <span class="section-label">Quyền của bạn</span>
           <h2>Quyền từ chối (Opt-Out)</h2>
-          <p>Bạn có thể dừng toàn bộ việc thu thập thông tin bằng cách gỡ cài đặt ứng dụng.</p>
+          <p>Bạn có thể dễ dàng dừng toàn bộ việc thu thập thông tin của Ứng dụng bằng cách gỡ cài đặt ứng dụng khỏi thiết bị di động của bạn.</p>
         </div>
         <div class="section-row">
           <span class="section-label">Xóa dữ liệu</span>
-          <h2>Yêu cầu xóa dữ liệu</h2>
-          <p>Ứng dụng không yêu cầu tài khoản và không lưu thông tin cá nhân trên máy chủ. Toàn bộ cài đặt lưu cục bộ trên thiết bị. Để xóa dữ liệu, gỡ cài đặt ứng dụng.</p>
+          <h2>Yêu cầu xóa dữ liệu (Data Deletion)</h2>
+          <p>Vì Ứng dụng không yêu cầu tạo tài khoản và không lưu trữ thông tin cá nhân của bạn trên bất kỳ máy chủ nào, chúng tôi không có dữ liệu cá nhân để xóa. Toàn bộ cài đặt đếm ngược của bạn được lưu trữ cục bộ trên thiết bị. Để xóa tất cả dữ liệu này, bạn chỉ cần gỡ cài đặt Ứng dụng khỏi điện thoại của mình.</p>
         </div>
         <div class="section-row">
           <span class="section-label">Lưu trữ</span>
           <h2>Chính sách lưu giữ dữ liệu</h2>
-          <p>Dữ liệu được lưu trong thời gian sử dụng và một khoảng thời gian hợp lý sau đó. Liên hệ <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a> để được hỗ trợ.</p>
+          <p>Nhà cung cấp dịch vụ sẽ lưu giữ dữ liệu do Người dùng cung cấp miễn là bạn sử dụng Ứng dụng và trong một khoảng thời gian hợp lý sau đó. Nếu bạn muốn hỗ trợ thêm về dữ liệu, vui lòng liên hệ tại <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a> và họ sẽ phản hồi trong thời gian hợp lý.</p>
         </div>
         <div class="section-row">
           <span class="section-label">Trẻ em</span>
-          <h2>Bảo vệ trẻ em</h2>
-          <p>Ứng dụng không cố ý thu thập dữ liệu từ trẻ em dưới 13 tuổi. Nếu phát hiện, thông tin sẽ bị xóa ngay. Phụ huynh liên hệ <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a>.</p>
+          <h2>Trẻ em</h2>
+          <p>Nhà cung cấp dịch vụ không sử dụng Ứng dụng để cố ý thu thập dữ liệu từ hoặc tiếp thị cho trẻ em dưới 13 tuổi.</p>
+          <p>Trong trường hợp phát hiện một trẻ em dưới 13 tuổi đã cung cấp thông tin cá nhân, Nhà cung cấp dịch vụ sẽ xóa ngay lập tức thông tin này khỏi máy chủ. Nếu bạn là cha mẹ hoặc người giám hộ và nhận thấy con mình đã cung cấp thông tin cá nhân, vui lòng liên hệ <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a> để có biện pháp xử lý kịp thời.</p>
         </div>
         <div class="section-row">
           <span class="section-label">Bảo mật</span>
-          <h2>Bảo mật thông tin</h2>
-          <p>Nhà cung cấp dịch vụ áp dụng biện pháp bảo vệ vật lý, điện tử và quy trình để bảo vệ thông tin được xử lý.</p>
+          <h2>Bảo mật</h2>
+          <p>Nhà cung cấp dịch vụ quan tâm đến việc bảo vệ tính bảo mật thông tin của bạn. Chúng tôi cung cấp các biện pháp bảo vệ vật lý, điện tử và quy trình để bảo vệ thông tin được xử lý và duy trì.</p>
         </div>
         <div class="section-row">
           <span class="section-label">Cập nhật</span>
-          <h2>Thay đổi chính sách</h2>
-          <p>Chính sách có thể được cập nhật theo thời gian. Tiếp tục sử dụng ứng dụng được coi là chấp thuận mọi thay đổi. Có hiệu lực từ <strong>09/05/2026</strong>.</p>
+          <h2>Thay đổi</h2>
+          <p>Chính sách bảo mật này có thể được cập nhật theo thời gian. Nhà cung cấp dịch vụ sẽ thông báo cho bạn về bất kỳ thay đổi nào bằng cách cập nhật trang này. Bạn nên tham khảo Chính sách bảo mật này thường xuyên, vì việc tiếp tục sử dụng Ứng dụng được coi là chấp thuận mọi thay đổi.</p>
+          <p>Chính sách bảo mật này có hiệu lực kể từ ngày <strong>09/05/2026</strong>.</p>
         </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">Đồng ý</span>
+        <h2>Sự đồng ý của bạn</h2>
+        <p>Bằng cách sử dụng Ứng dụng, bạn đồng ý cho phép xử lý thông tin của bạn như được quy định trong Chính sách bảo mật này hiện tại và khi được sửa đổi bởi chúng tôi.</p>
       </div>
 
       <div class="section">
         <span class="section-label">Liên hệ</span>
         <h2>Liên hệ với chúng tôi</h2>
-        <p>Mọi thắc mắc về quyền riêng tư: <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a></p>
+        <p>Nếu bạn có bất kỳ câu hỏi nào liên quan đến quyền riêng tư khi sử dụng Ứng dụng, vui lòng liên hệ với Nhà cung cấp dịch vụ qua email: <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a></p>
       </div>
+
     </div>
 
-    <!-- ENGLISH -->
+    <!-- ══ ENGLISH ══ -->
     <div class="lang-en">
+
       <div class="section">
         <span class="section-label">Overview</span>
         <h2>Privacy Policy</h2>
-        <p>This policy applies to the <strong>Đếm Ngược Thi - THPTQG &amp; ĐGNL</strong> app, created by <strong>Dang Khoa</strong> as a free "AS IS" service.</p>
+        <p>This privacy policy applies to the <strong>Đếm Ngược Thi - THPTQG &amp; ĐGNL</strong> app (hereby referred to as "Application") for mobile devices that was created by <strong>Dang Khoa</strong> (hereby referred to as "Service Provider") as a Free service. This service is intended for use "AS IS".</p>
       </div>
 
       <div class="section">
         <span class="section-label">Data collection</span>
         <h2>Information Collection and Use</h2>
-        <p>The Application collects information when you download and use it, which may include:</p>
+        <p>The Application collects information when you download and use it. This information may include:</p>
         <ul>
-          <li>Your device's Internet Protocol (IP) address</li>
-          <li>Time spent on the Application</li>
-          <li>Operating system on your mobile device</li>
+          <li>Your device's Internet Protocol address (e.g. IP address)</li>
+          <li>The time spent on the Application</li>
+          <li>The operating system you use on your mobile device</li>
         </ul>
-        <p>The Application does <strong>not</strong> gather precise location data and does <strong>not</strong> use AI technologies to process your data.</p>
+        <p>The Application does <strong>not</strong> gather precise information about the location of your mobile device.</p>
+        <p>The Application does <strong>not</strong> use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
+        <p>The Service Provider may use collected information from time to time to send important notices and updates about the Application.</p>
       </div>
 
       <div class="section">
         <span class="section-label">Permissions</span>
         <h2>Permissions and Features</h2>
+        <p>The Application uses certain device permissions for specific features:</p>
         <ul>
-          <li><strong>Screenshot Detection (Android):</strong> Uses <code>READ_MEDIA_IMAGES</code> (Android 13+) or <code>READ_EXTERNAL_STORAGE</code> (Android &lt; 13) solely to detect screenshots and show a sharing interface. The app does not read or store photos from your gallery.</li>
-          <li><strong>Save Image to Gallery (Android):</strong> Uses <code>WRITE_EXTERNAL_STORAGE</code> (Android ≤ 9) when you tap "Save to device". Only saves content you explicitly choose to share.</li>
-          <li><strong>Background Music:</strong> Lofi music is streamed and requires internet. The app does not record or collect audio.</li>
-          <li><strong>Notifications:</strong> Daily study reminders if you grant permission. Can be disabled anytime in device settings.</li>
-          <li><strong>Internet access:</strong> For streaming music, loading exam data, displaying ads, and anonymous crash reports.</li>
+          <li><strong>Photo Library (iOS):</strong> The Application requests access to your photo library so you can select a photo from your device as a custom background. The selected image is used and stored locally on your device only and is never uploaded to any server.</li>
+          <li><strong>Screenshot Detection (Android):</strong> The Application uses <code>READ_MEDIA_IMAGES</code> (Android 13+) or <code>READ_EXTERNAL_STORAGE</code> (Android &lt; 13) solely to detect when you take a screenshot, in order to automatically show a sharing interface for your countdown result. The Application does <strong>not</strong> read, collect, or store any photos from your gallery.</li>
+          <li><strong>Save Image to Gallery (Android):</strong> When you tap "Save to device" in the sharing interface, the Application uses <code>WRITE_EXTERNAL_STORAGE</code> (Android ≤ 9) to save the generated image to your photo library. The image contains only the countdown content you chose to share.</li>
+          <li><strong>Notifications &amp; Exact Alarm Scheduling:</strong> The Application may send daily study reminder notifications if you grant permission (<code>POST_NOTIFICATIONS</code>). To ensure notifications arrive on time, the app uses <code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code> on Android. You can disable notifications at any time in your device settings.</li>
+          <li><strong>Background Music (requires internet):</strong> Lofi background music is streamed from our servers. This feature requires an internet connection and will not work offline. The Application does not record or collect any audio from your device.</li>
+          <li><strong>Ad Tracking (iOS — App Tracking Transparency):</strong> The Application may request tracking permission (<code>NSUserTrackingUsageDescription</code>) to provide personalized ads and measure ad effectiveness via Google AdMob. You can decline this request and still use all app features.</li>
+          <li><strong>Internet access:</strong> Used for streaming background music, loading exam data, automatic weather detection, displaying ads, and sending anonymous crash reports.</li>
         </ul>
       </div>
 
       <div class="section">
         <span class="section-label">Third parties</span>
-        <h2>Third Party Services</h2>
-        <p>Only aggregated, anonymized data is shared with external services:</p>
+        <h2>Third Party Access</h2>
+        <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.</p>
+        <p>Please note that the Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the Privacy Policy of the third-party service providers used by the Application:</p>
         <div class="tp-list">
           <div class="tp-item">
             <a href="https://support.google.com/admob/answer/6128543?hl=vi" target="_blank" rel="noopener noreferrer"><span class="tp-name">Google AdMob</span></a>
@@ -466,47 +409,61 @@
             <span class="tp-role">Social media sharing</span>
           </div>
         </div>
-        <p style="margin-top:14px">Information may be disclosed when required by law, to protect legal rights, or with trusted providers bound by confidentiality agreements.</p>
+        <p style="margin-top:14px">The Service Provider may disclose User Provided and Automatically Collected Information:</p>
+        <ul>
+          <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
+          <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li>
+          <li>with their trusted services providers who work on their behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</li>
+        </ul>
       </div>
 
       <div class="section-group">
         <div class="section-row">
           <span class="section-label">Your rights</span>
           <h2>Opt-Out Rights</h2>
-          <p>You can stop all information collection by uninstalling the Application.</p>
+          <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.</p>
         </div>
         <div class="section-row">
           <span class="section-label">Data deletion</span>
           <h2>User Data Deletion</h2>
-          <p>The Application requires no account and stores no personal data on external servers. All settings are stored locally. To delete all data, simply uninstall the Application.</p>
+          <p>Since the Application does not require account creation and does not store your personal information on any external servers, we do not hold any personal data to delete. All your countdown settings are stored locally on your device. To delete all this data, simply uninstall the Application from your device.</p>
         </div>
         <div class="section-row">
           <span class="section-label">Retention</span>
           <h2>Data Retention Policy</h2>
-          <p>Data is retained while you use the Application and for a reasonable time thereafter. Contact <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a> for assistance.</p>
+          <p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. If you need further assistance regarding data, please contact them at <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a> and they will respond in a reasonable time.</p>
         </div>
         <div class="section-row">
           <span class="section-label">Children</span>
-          <h2>Children's Privacy</h2>
-          <p>The Application does not knowingly collect data from children under 13. If discovered, information will be immediately deleted. Parents may contact <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a>.</p>
+          <h2>Children</h2>
+          <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.</p>
+          <p>The Application does not address anyone under the age of 13. In the case the Service Provider discovers that a child under 13 has provided personal information, the Service Provider will immediately delete this from their servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact the Service Provider (<a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a>) so that they will be able to take the necessary actions.</p>
         </div>
         <div class="section-row">
           <span class="section-label">Security</span>
           <h2>Security</h2>
-          <p>The Service Provider applies physical, electronic, and procedural safeguards to protect processed information.</p>
+          <p>The Service Provider is concerned about safeguarding the confidentiality of your information. The Service Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider processes and maintains.</p>
         </div>
         <div class="section-row">
           <span class="section-label">Updates</span>
-          <h2>Changes to This Policy</h2>
-          <p>This Privacy Policy may be updated over time. Continued use constitutes acceptance of any changes. Effective from <strong>2026-05-09</strong>.</p>
+          <h2>Changes</h2>
+          <p>This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.</p>
+          <p>This privacy policy is effective as of <strong>2026-05-09</strong>.</p>
         </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">Consent</span>
+        <h2>Your Consent</h2>
+        <p>By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.</p>
       </div>
 
       <div class="section">
         <span class="section-label">Contact</span>
         <h2>Contact Us</h2>
-        <p>For any privacy questions: <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a></p>
+        <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at <a href="mailto:contact.nguyendangkhoa2004@gmail.com">contact.nguyendangkhoa2004@gmail.com</a>.</p>
       </div>
+
     </div>
 
   </div>
@@ -522,7 +479,6 @@
     const btnEn = document.getElementById('btn-en');
     const allVi = document.querySelectorAll('.lang-vi');
     const allEn = document.querySelectorAll('.lang-en');
-
     if (lang === 'vi') {
       allVi.forEach(el => el.style.display = 'block');
       allEn.forEach(el => el.style.display = 'none');
