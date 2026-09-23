@@ -776,7 +776,64 @@
     </footer>
   </div>
 
+  <div id="yt-audio-player" style="position:fixed;bottom:0;right:0;width:2px;height:2px;opacity:0;pointer-events:none;"></div>
+
+  <button id="music-toggle-btn" onclick="toggleMusic()" aria-label="Bật/tắt nhạc nền"
+    style="position:fixed;bottom:20px;right:20px;z-index:9999;width:48px;height:48px;border-radius:50%;border:none;background:#1a1c29;color:#fff;font-size:20px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;">🔈</button>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
+    let ytPlayer;
+    let musicMuted = true;
+
+    // Trình duyệt chỉ cho autoplay khi bị mute — phát muted trước, rồi tự bật
+    // tiếng ở lần tương tác đầu tiên của người dùng trên trang.
+    function onYouTubeIframeAPIReady() {
+      ytPlayer = new YT.Player('yt-audio-player', {
+        videoId: '9EwqXZtviTM',
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          controls: 0,
+          loop: 1,
+          playlist: '9EwqXZtviTM',
+          playsinline: 1,
+        },
+        events: {
+          onReady: (e) => e.target.playVideo(),
+        },
+      });
+    }
+
+    function setMusicButtonIcon(muted) {
+      const btn = document.getElementById('music-toggle-btn');
+      if (btn) btn.textContent = muted ? '🔈' : '🔊';
+    }
+
+    function toggleMusic() {
+      if (!ytPlayer || !ytPlayer.unMute) return;
+      if (musicMuted) {
+        ytPlayer.unMute();
+        ytPlayer.setVolume(100);
+        ytPlayer.playVideo();
+      } else {
+        ytPlayer.mute();
+      }
+      musicMuted = !musicMuted;
+      setMusicButtonIcon(musicMuted);
+    }
+
+    function unmuteOnFirstInteraction() {
+      if (ytPlayer && musicMuted && ytPlayer.unMute) {
+        ytPlayer.unMute();
+        ytPlayer.setVolume(100);
+        musicMuted = false;
+        setMusicButtonIcon(false);
+      }
+    }
+    document.addEventListener('click', unmuteOnFirstInteraction, { once: true });
+    document.addEventListener('touchstart', unmuteOnFirstInteraction, { once: true });
+
     function switchLang(lang) {
       const btnVi = document.getElementById('btn-vi');
       const btnEn = document.getElementById('btn-en');
