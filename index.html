@@ -786,6 +786,8 @@
     let ytPlayer;
     let musicMuted = true;
 
+    const MUSIC_START_SECONDS = 19;
+
     // Trình duyệt chỉ cho autoplay khi bị mute — phát muted trước, rồi tự bật
     // tiếng ở lần tương tác đầu tiên của người dùng trên trang.
     function onYouTubeIframeAPIReady() {
@@ -795,12 +797,19 @@
           autoplay: 1,
           mute: 1,
           controls: 0,
-          loop: 1,
-          playlist: '9EwqXZtviTM',
+          start: MUSIC_START_SECONDS,
           playsinline: 1,
         },
         events: {
           onReady: (e) => e.target.playVideo(),
+          // Bỏ loop/playlist mặc định của YouTube vì nó luôn lặp lại từ giây
+          // 0 — tự bắt sự kiện kết thúc để quay về đúng mốc 19s mỗi lần lặp.
+          onStateChange: (e) => {
+            if (e.data === YT.PlayerState.ENDED) {
+              ytPlayer.seekTo(MUSIC_START_SECONDS, true);
+              ytPlayer.playVideo();
+            }
+          },
         },
       });
     }
